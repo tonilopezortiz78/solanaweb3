@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script> console.log("h");</script>
 		<!-- Production (un-minified) -->
 		<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
 		<script type = "text/javascript">
@@ -13,9 +12,13 @@
 			    solanaWeb3.clusterApiUrl('devnet'),
 			    'confirmed',
 			  );
+		          console.log("connection:");
+			  console.log(connection);
 
 			  // Generate a new wallet keypair and airdrop SOL
 			  var wallet = solanaWeb3.Keypair.generate();
+			  console.log("wallet:");
+		          console.log(wallet);
 			  var airdropSignature = await connection.requestAirdrop(
 			    wallet.publicKey,
 			    solanaWeb3.LAMPORTS_PER_SOL,
@@ -28,12 +31,14 @@
 			  // account data is bytecode that needs to be deserialized
 			  // serialization and deserialization is program specic
 			  let account = await connection.getAccountInfo(wallet.publicKey);
+			  console.log(account);
 			  console.log(account.lamports);
+		          document.getElementById("result").InnerHTML=wallet.publicKey;
 			})();	
 		</script>
 	</head>
 	<body>
-		<h1> Testing solanaWeb3 Solana </h1>
+		<h1> Testing solanaWeb3 Solana on devnet</h1>
 		<p id="result"></p>
 	</body>
 	<footer>
