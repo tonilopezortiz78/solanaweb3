@@ -6,14 +6,13 @@
 		<script type = "text/javascript">
 			  console.log(solanaWeb3);	//import * as solanaWeb3 from '@solana/solanaWeb3.js';
 			  (async () => {
-		          document.getElementById("result").innerHTML="connecting with solana clusters...";
 			  console.log("connecting with solana cluster...");
 			  // Connect to cluster
 			  var connection = new solanaWeb3.Connection(
 			    solanaWeb3.clusterApiUrl('devnet'),
 			    'confirmed',
 			  );
-		          document.getElementById("result").innerHTML="Connection with Solana Cluster ready!";
+		          document.getElementById("connection").innerHTML="Connection with Solana Cluster ready!";
 			  console.log("Connection with Solana Cluster ready!"); 
 		          console.log("connection:");
 			  console.log(connection);
@@ -44,6 +43,7 @@
 	</head>
 	<body>
 		<h1> Testing solanaWeb3 Solana on devnet</h1>
+		<h3 id="connection">Connection</h3>
 		<h3 id="createWallet"> Create wallet </h3>
 		<h3 id="airdrop"> Airdrop </h3>
 		<h3 id="send">Send</h3>
