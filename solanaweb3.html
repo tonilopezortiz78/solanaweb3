@@ -33,7 +33,7 @@
 			  let account = await connection.getAccountInfo(wallet.publicKey);
 			  console.log(account);
 			  console.log(account.lamports);
-		          document.getElementById("result").InnerHTML=wallet.publicKey;
+				  document.getElementById("result").InnerHTML=`<p>your wallet: ${wallet.publicKey} </p>`;
 			})();	
 		</script>
 	</head>
