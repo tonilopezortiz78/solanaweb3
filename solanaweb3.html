@@ -3,6 +3,18 @@
 	<head>
 		<!-- Production (un-minified) -->
 		<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+	</head>
+	<body>
+		<h1> Testing solanaWeb3 Solana on devnet</h1>
+		<h3 >Connection</h3>
+		<p id="connection">Waiting for conneciton</p>
+		<h3 id="createWallet"> Create wallet </h3>
+		<h3 id="airdrop"> Airdrop </h3>
+		<h3 id="send">Send</h3>
+		<h3 id="receive">Receive</h3>
+		
+
+		<p id="result"></p>
 		<script type = "text/javascript">
 			  console.log(solanaWeb3);	//import * as solanaWeb3 from '@solana/solanaWeb3.js';
 			  (async () => {
@@ -12,7 +24,7 @@
 			    solanaWeb3.clusterApiUrl('devnet'),
 			    'confirmed',
 			  );
-		          document.getElementById("connection").innerHTML="Connection with Solana Cluster ready!";
+		         document.getElementById("connection").innerHTML="Connection with Solana Cluster ready!";
 			  console.log("Connection with Solana Cluster ready!"); 
 		          console.log("connection:");
 			  console.log(connection);
@@ -40,18 +52,6 @@
 			  document.getElementById("result").innerHTML=printweb;
 			})();	
 		</script>
-	</head>
-	<body>
-		<h1> Testing solanaWeb3 Solana on devnet</h1>
-		<h3 >Connection</h3>
-		<p id="connection">Waiting for conneciton</p>
-		<h3 id="createWallet"> Create wallet </h3>
-		<h3 id="airdrop"> Airdrop </h3>
-		<h3 id="send">Send</h3>
-		<h3 id="receive">Receive</h3>
-		
-
-		<p id="result"></p>
 	</body>
 	<footer>
 	</footer>
